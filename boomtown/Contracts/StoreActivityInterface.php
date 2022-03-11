@@ -10,6 +10,7 @@
 namespace Boomtown\Contracts;
 
 use Temporal\Activity\ActivityInterface;
+use Boomtown\Implementations\TaskQueueFilenamePair;
 
 #[ActivityInterface(prefix:"FileProcessing.")]
 interface StoreActivityInterface

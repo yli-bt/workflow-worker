@@ -19,30 +19,4 @@ $router->get('/v1', function () use ($router) {
     return "Workflow Orchestration Microservice API" . " [". $router->app->version() . "]";
 });
 
-$router->group(['prefix' => 'v1', 'middleware' => 'JsonRequestMiddleware'], function() use ($router) {
-
-    $router->post('/poc', 'WorkflowPocController@run');
-    /**
-    $router->post('/message', 'SendMailController@queueMessage');
-
-    $router->post('/template', 'SendMailController@queueTemplate');
-
-    $router->get('/test', function () use ($router) {
-
-        $data = request()->all();
-        $response_data = [
-            'request' => $data,
-            'response' => [
-                'result' => 'Success.'
-            ],
-            'test_env_var' => getenv('TEST_ENV_VAR')
-        ];
-
-        Log::notice('Hit /test endpoint');
-
-        return response()->json($response_data);
-
-    });
-    **/
-});
 
