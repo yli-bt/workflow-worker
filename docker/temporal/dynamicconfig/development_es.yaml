@@ -16,6 +16,10 @@ frontend.throttledLogRPS:
 history.historyMgrNumConns:
 - value: 50
   constraints: {}
+frontend.keepAliveMaxConnectionAge:
+- value: 5m
+frontend.keepAliveMaxConnectionAgeGrace:
+- value: 70s
 history.defaultActivityRetryPolicy:
 - value:
     InitialIntervalInSeconds: 1
