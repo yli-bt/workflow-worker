@@ -48,6 +48,7 @@ services:
     ports:
       - ${TEMPORAL_ELASTIC_PORT:-9200}:9200
     volumes:
+      - ./docker/elasticsearch/jvm.options:/etc/elasticsearch/jvm.options
       - temporalelasticdata:/usr/share/elasticsearch/data
   temporal:
     container_name: temporal

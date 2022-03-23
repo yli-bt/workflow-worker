@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Boomtown\Contracts;
 
-// @@@SNIPSTART php-hello-activity-interface
+// @@@SNIPSTART php-hello-two-activity-interface
 use Temporal\Activity\ActivityInterface;
 use Temporal\Activity\ActivityMethod;
 
-interface HelloActivityInterface
+#[ActivityInterface(prefix:"HelloTwo.")]
+interface HelloTwoActivityInterface
 {
-    #[ActivityMethod("composeGreeting")]
     public function composeGreeting(): string;
 }
 // @@@SNIPEND
