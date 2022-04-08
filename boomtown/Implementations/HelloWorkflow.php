@@ -8,9 +8,6 @@ use Carbon\CarbonInterval;
 use Temporal\Activity\ActivityOptions;
 use Temporal\Workflow;
 use Boomtown\Contracts\HelloWorkflowInterface;
-use Boomtown\Contracts\HelloOneActivityInterface;
-use Boomtown\Contracts\HelloTwoActivityInterface;
-use Boomtown\Contracts\HelloThreeActivityInterface;
 
 // @@@SNIPSTART php-hello-workflow
 class HelloWorkflow implements HelloWorkflowInterface
@@ -27,15 +24,21 @@ class HelloWorkflow implements HelloWorkflowInterface
         $this->activities = [
             Workflow::newActivityStub(
                 HelloOneActivity::class,
-                ActivityOptions::new()->withStartToCloseTimeout(CarbonInterval::seconds(2))
+                ActivityOptions::new()
+                    ->withActivityId('Hello Activity Red')
+                    ->withStartToCloseTimeout(CarbonInterval::seconds(60))
             ),
             Workflow::newActivityStub(
                 HelloTwoActivity::class,
-                ActivityOptions::new()->withStartToCloseTimeout(CarbonInterval::seconds(2))
+                ActivityOptions::new()
+                    ->withActivityId('Hello Activity Green')
+                    ->withStartToCloseTimeout(CarbonInterval::seconds(60))
             ),
             Workflow::newActivityStub(
                 HelloThreeActivity::class,
-                ActivityOptions::new()->withStartToCloseTimeout(CarbonInterval::seconds(2))
+                ActivityOptions::new()
+                    ->withActivityId('Hello Activity Blue')
+                    ->withStartToCloseTimeout(CarbonInterval::seconds(60))
             ),
         ];
     }
