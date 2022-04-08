@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Boomtown\Implementations;
 
-use Temporal\Activity;
 use Boomtown\Contracts\HelloOneActivityInterface;
 
 // @@@SNIPSTART php-hello-one-activity
@@ -15,6 +14,7 @@ class HelloOneActivity implements HelloOneActivityInterface
 
     public function composeGreeting(): string
     {
+        sleep(20);
         return $this->greeting . ' ' . $this->name;
     }
 }
